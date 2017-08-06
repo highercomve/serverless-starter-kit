@@ -7,8 +7,8 @@
   "author": "Sergio Marin",
   "license": "MIT",
   "scripts": {
-    "console": "node console.js",
-    "test": "node test.js",
+    "console": "node private/console.js",
+    "test": "node private/test.js",
     "start": "serverless offline start --host 0.0.0.0",
     "debug": "SLS_DEBUG=* node-debug serverless offline start --host 0.0.0.0",
     "flow": "flow",

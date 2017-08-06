@@ -10,15 +10,15 @@ var glob = require('glob')
 // finish replay configuration
 
 try {
-  console.log('Loading enviroment variables from "./environments/test.json"')
-  var filePath = path.join(__dirname, './environments/test.json')
+  console.log('Loading enviroment variables from "../environments/test.json"')
+  var filePath = path.join(__dirname, '../environments/test.json')
   var envVars = JSON.parse(fs.readFileSync(filePath, 'utf8'))
 
   Object.keys(envVars).forEach(function (key) {
     process.env[key] = envVars[key]
   })
 } catch (e) {
-  console.log('Unable to find "./environments/test.json", loading directly from environment')
+  console.log('Unable to find "../environments/test.json", loading directly from environment')
 }
 
 // Instantiate a Mocha instance.
@@ -27,7 +27,7 @@ var mocha = new Mocha({
 })
 
 // Set test files directory
-var testDir = path.join(__dirname, './test/**/*.spec.js')
+var testDir = path.join(__dirname, '../test/**/*.spec.js')
 
 if (process.argv[2]) {
   testDir = process.argv[2]

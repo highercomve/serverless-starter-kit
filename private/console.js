@@ -6,21 +6,21 @@ var glob = require('glob')
 
 // Load ENV vars from ecosystem-dev.json
 try {
-  console.log('Loading enviroment variables from "./environments/development.json"')
-  var filePath = path.join(__dirname, './environments/development.json')
+  console.log('Loading enviroment variables from "../environments/development.json"')
+  var filePath = path.join(__dirname, '../environments/development.json')
   var fileContent = fs.readFileSync(filePath, 'utf8')
   var envVars = JSON.parse(fileContent)
   Object.keys(envVars).forEach(function (key) {
     process.env[key] = envVars[key]
   })
 } catch (e) {
-  console.log('Unable to find "./environments/development.json", loading directly from environment')
+  console.log('Unable to find "../environments/development.json", loading directly from environment')
 }
 // All variables are loaded
 
 // Load all modules in src
 function loadVariables () {
-  var AllJsFilesPattern = path.join(__dirname, './src/**/*.js')
+  var AllJsFilesPattern = path.join(__dirname, '../src/**/*.js')
   var allSrcFiles = glob.sync(AllJsFilesPattern)
   return allSrcFiles.reduce((contextSum, file) => {
     var module = path.basename(file, '.js')
