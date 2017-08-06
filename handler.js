@@ -6,5 +6,4 @@ Mongoose.connect(process.env.MONGO_URL)
 const helloHandlers = require('./src/services/hello')
 
 const allHandlers = Object.assign({}, helloHandlers)
-console.log(allHandlers)
 module.exports = allHandlers
