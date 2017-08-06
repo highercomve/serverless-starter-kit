@@ -3,8 +3,8 @@ environments/development.json
 environments/stage.json
 environments/test.json
 environments/production.json
-__src__
-__test__
+.console_history
+dist
 
 # package directories
 node_modules
