@@ -1,4 +1,4 @@
-const helloHandler = (event, context, callback) => {
+module.exports.helloHandler = (event, context, callback) => {
   const test = Object.assign({}, { MONGO_URL: process.env.MONGO_URL }, event)
   const response = {
     statusCode: 200,
@@ -7,8 +7,4 @@ const helloHandler = (event, context, callback) => {
 
   callback(null, response)
 }
-
-// Handlers names must be unique
-module.exports = {
-  helloHandler: helloHandler
-}
+// Could be more than one handler to export
