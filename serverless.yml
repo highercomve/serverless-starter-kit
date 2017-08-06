@@ -28,7 +28,7 @@ custom:
 
 package:
   include:
-    - __src__/**
+    - src/**
     - node_modules/**
 
 provider:
