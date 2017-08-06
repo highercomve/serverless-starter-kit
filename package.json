@@ -13,7 +13,7 @@
     "debug": "SLS_DEBUG=* node-debug serverless offline start --host 0.0.0.0",
     "flow": "flow",
     "setup": "sh private/start_project.sh",
-    "sls": "sls"
+    "sls": "serverless"
   },
   "babel": {
     "presets": [
