@@ -1,0 +1,14 @@
+# files
+environments/development.json
+environments/stage.json
+environments/test.json
+environments/production.json
+__src__
+__test__
+
+# package directories
+node_modules
+jspm_packages
+
+# Serverless directories
+.serverless
