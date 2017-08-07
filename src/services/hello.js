@@ -7,4 +7,15 @@ module.exports.helloHandler = (event, context, callback) => {
 
   callback(null, response)
 }
+
+module.exports.echoHandler = (event, context, callback) => {
+  const requestBody = JSON.parse(event.body)
+  const test = { message: `${requestBody.greetings}: ${requestBody.name}` }
+  const response = {
+    statusCode: 200,
+    body: JSON.stringify(test)
+  }
+
+  callback(null, response)
+}
 // Could be more than one handler to export
