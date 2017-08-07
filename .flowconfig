@@ -1,9 +1,16 @@
 [ignore]
+.*/dist/.*
+.*/node_modules/.*
+.*/private/.*
 
 [include]
 
 [libs]
 
 [lints]
+all=warn
+untyped-type-import=error
+sketchy-null=warn
+sketchy-null-bool=off
 
 [options]

@@ -6,6 +6,10 @@ environments/production.json
 .console_history
 dist
 
+# Editor
+.code/
+.vscode/
+
 # package directories
 node_modules
 jspm_packages
