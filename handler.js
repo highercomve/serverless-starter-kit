@@ -1,6 +1,7 @@
 require('./load_env_vars')
 const Mongoose = require('mongoose')
-Mongoose.connect(process.env.MONGO_URL)
+const connectOptions = { user: process.env.MONGO_USER, pass: process.env.MONGO_PASS, useMongoClient: true }
+Mongoose.connect(process.env.MONGO_URL, connectOptions)
 
 // Load handlers
 const helloHandlers = require('./src/services/hello')

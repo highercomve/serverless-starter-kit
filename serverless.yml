@@ -29,7 +29,6 @@ custom:
 package:
   include:
     - src/**
-    - node_modules/**
 
 provider:
   name: aws
