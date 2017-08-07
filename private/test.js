@@ -8,7 +8,7 @@ var glob = require('glob')
 // console.log('Saving fixtures in:')
 // console.log(Replay.fixtures)
 // finish replay configuration
-require('./load_env_vars')
+require('../load_env_vars')
 
 // Instantiate a Mocha instance.
 var mocha = new Mocha({
