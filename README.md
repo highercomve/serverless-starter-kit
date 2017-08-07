@@ -57,7 +57,7 @@ module.exports = (event, context, callback) => {
 }
 ```
 
-### TODO
+### TODO -> This is already done
 Build a shell script for deploy preparation, this mean
 
 - run babel build insert the babel process files inside dist/src
@@ -66,8 +66,8 @@ Build a shell script for deploy preparation, this mean
 - move package.json and yarn.lock to dist
 - run yarn inside dist
 - and run the serverless deploy script for the selected environments, most accept
-    - `deploy production`
-    - `deploy production stage`
-    - `deploy production stage dev`
-    - `deploy dev`
-    - or `deploy` that will deploy en every environment
+    - `yarn deploy production`
+    - `yarn deploy production stage`
+    - `yarn deploy production stage dev`
+    - `yarn deploy dev`
+    - or `yarn deploy` that will deploy en every environment
