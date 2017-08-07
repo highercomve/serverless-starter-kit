@@ -3,11 +3,11 @@ serverless project starter kit
 
 This project uses lambda services to be deployed and use flow to be created, therefore the deployment is done with:
 
-```
-serveless deploy --stage dev
-serveless deploy --stage stage
-serveless deploy --stage production
-```
+- `yarn deploy production`
+- `yarn deploy production stage`
+- `yarn deploy production stage dev`
+- `yarn deploy dev`
+- or `yarn deploy` that will deploy en every environment
 
 In order to run in local you can use
 
@@ -56,18 +56,3 @@ module.exports = (event, context, callback) => {
     // if and error need to be log on cloudwatch the callback function takes the error has first parameter
 }
 ```
-
-### TODO -> This is already done
-Build a shell script for deploy preparation, this mean
-
-- run babel build insert the babel process files inside dist/src
-- move handler.js to dist
-- move serverless.yml to dist
-- move package.json and yarn.lock to dist
-- run yarn inside dist
-- and run the serverless deploy script for the selected environments, most accept
-    - `yarn deploy production`
-    - `yarn deploy production stage`
-    - `yarn deploy production stage dev`
-    - `yarn deploy dev`
-    - or `yarn deploy` that will deploy en every environment
