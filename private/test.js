@@ -8,18 +8,7 @@ var glob = require('glob')
 // console.log('Saving fixtures in:')
 // console.log(Replay.fixtures)
 // finish replay configuration
-
-try {
-  console.log('Loading enviroment variables from "../environments/test.json"')
-  var filePath = path.join(__dirname, '../environments/test.json')
-  var envVars = JSON.parse(fs.readFileSync(filePath, 'utf8'))
-
-  Object.keys(envVars).forEach(function (key) {
-    process.env[key] = envVars[key]
-  })
-} catch (e) {
-  console.log('Unable to find "../environments/test.json", loading directly from environment')
-}
+require('./load_env_vars')
 
 // Instantiate a Mocha instance.
 var mocha = new Mocha({

@@ -2,5 +2,6 @@
     "MONGO_USER": "",
     "MONGO_PASS": "",
     "MONGO_URL": "mongodb://localhost:27017/bohupa-env",
-    "AWS_SECRET": ""
+    "AWS_SECRET": "",
+    "S3_APP_BUCKET": "",
 }
