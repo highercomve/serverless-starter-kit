@@ -5,6 +5,7 @@ environments/test.json
 environments/production.json
 .console_history
 dist
+.nyc_output
 
 # Editor
 .code/
