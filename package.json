@@ -8,8 +8,9 @@
   "license": "MIT",
   "scripts": {
     "console": "node private/console.js",
-    "test": "nyc ava -v",
-    "build": "babel src/ -d dist/src/",
+    "test": "NODE_ENV=test nyc ava -v",
+    "build": "sh private/build.sh",
+    "babelify": "babel ./src -d dist/src",
     "start": "serverless offline start --host 0.0.0.0",
     "debug": "SLS_DEBUG=* node-debug serverless offline start --host 0.0.0.0",
     "flow": "flow",
@@ -23,15 +24,9 @@
       "babel-register"
     ],
     "files": [
-			"test/**/*.spec.js"
+      "test/**/*.spec.js"
     ],
     "babel": "inherit"
-  },
-  "babel": {
-    "presets": [
-      "env",
-      "flow"
-    ]
   },
   "standard": {
     "globals": [
@@ -45,19 +40,27 @@
     ]
   },
   "dependencies": {
+    "aws-sdk": "^2.94.0",
     "mongoose": "^4.11.5"
   },
   "devDependencies": {
+    "@types/aws-lambda": "^0.0.16",
+    "@types/mongoose": "^4.7.23",
+    "@types/node": "^8.0.31",
     "ava": "^0.22.0",
     "ava-spec": "^1.1.0",
-    "babel-cli": "^6.24.1",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
     "babel-preset-flow": "^6.23.0",
-    "flow-bin": "^0.52.0",
     "node-inspector": "^1.1.1",
     "nyc": "^11.2.1",
     "repl.history": "^0.1.4",
     "serverless": "^1.19.0",
-    "serverless-offline": "^3.15.3"
+    "serverless-offline": "^3.15.3",
+    "serverless-webpack": "^3.1.0",
+    "webpack": "^3.6.0",
+    "webpack-node-externals": "^1.6.0"
   }
 }

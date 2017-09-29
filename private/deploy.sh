@@ -9,7 +9,7 @@ rm -rf dist
 echo "Creating dist"
 echo "====================="
 mkdir dist
-yarn build
+yarn babelify
 
 echo "Move necessary files to dist"
 echo "====================="

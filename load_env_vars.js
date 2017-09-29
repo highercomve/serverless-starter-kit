@@ -5,7 +5,7 @@ var path = require('path')
 try {
   var env = process.env.NODE_ENV || 'development'
   console.log('Loading enviroment variables from "./environments/' + env + '.json"')
-  var filePath = path.join(__dirname, './environments/' + env + '.json')
+  var filePath = './environments/' + env + '.json'
   var fileContent = fs.readFileSync(filePath, 'utf8')
   var envVars = JSON.parse(fileContent)
   Object.keys(envVars).forEach(function (key) {

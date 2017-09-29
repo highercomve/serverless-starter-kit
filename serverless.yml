@@ -19,12 +19,13 @@ service: api
 
 plugins:
   - serverless-offline
+  - serverless-webpack
 
 custom:
   serverless-offline:
     resourceRoutes: true
     babelOptions:
-      presets: ["flow"]
+      presets: ["flow", "env"]
 
 package:
   include:
@@ -68,18 +69,11 @@ provider:
 #    - exclude-me-dir/**
 
 functions:
-  hello:
-    handler: handler.helloHandler
+  authenticate:
+    handler: handler.signinHandler
     events:
       - http:
-          path: hello
-          method: get
-          cors: true
-  echo:
-    handler: handler.echoHandler
-    events:
-      - http:
-          path: echo
+          path: 'auth/authenticate'
           method: post
           cors: true
 
